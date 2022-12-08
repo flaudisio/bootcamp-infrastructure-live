@@ -20,7 +20,3 @@ clean-cache:  ## Remove cache-related files (optional: DIR=example/directory/)
 .PHONY: update-providers
 update-providers:  ## Update Terraform providers (required: DIR=example/directory/; optional: NO_UPGRADE=1)
 	./_scripts/update-providers.sh $(DIR)
-
-.PHONY: clean-removed-components
-clean-removed-components:  ## Remove directories of destroyed components (optional: DIR=example/directory/)
-	./_scripts/clean-removed-components.sh $(DIR)
