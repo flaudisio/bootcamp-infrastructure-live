@@ -1,0 +1,18 @@
+# ------------------------------------------------------------------------------
+# ATTENTION
+#
+# This file is copied by default to the Terragrunt working directory (where
+# Terraform is called). If there's any other "internal" .tool-versions file
+# (e.g. example/sandbox/.tool-versions), it will be copied instead. See the
+# "generate" block in the root terragrunt.hcl file for more information.
+#
+# NOTE 1: before updating the Terraform version here, please make sure that any
+# related Atlantis instances have the new version already installed to avoid
+# incompatibility errors in the main GitOps-based workflow.
+#
+# NOTE 2: any .tool-versions files in the Blueprints repository are IGNORED.
+# ------------------------------------------------------------------------------
+
+terraform 1.3.6
+terragrunt 0.42.3
+shellcheck 0.8.0
