@@ -11,11 +11,12 @@ locals {
   # Load account and region-level variables
   account_vars = read_terragrunt_config(find_in_parent_folders("account.hcl")).locals
   region_vars  = read_terragrunt_config(find_in_parent_folders("region.hcl")).locals
+  env_vars     = read_terragrunt_config(find_in_parent_folders("env.hcl")).locals
 
   # Extract the variables we need for easy access
   account_id  = local.account_vars.account_id
-  environment = local.account_vars.environment
   aws_region  = local.region_vars.aws_region
+  environment = local.env_vars.environment
 
   # Tags for state resources (S3 bucket, DynamoDB table, etc)
   state_tags = {
@@ -85,4 +86,5 @@ retryable_errors = [
 inputs = merge(
   local.account_vars,
   local.region_vars,
+  local.env_vars,
 )
