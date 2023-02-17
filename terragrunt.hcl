@@ -18,9 +18,13 @@ locals {
   aws_region  = local.region_vars.aws_region
   environment = local.env_vars.environment
 
+  # Component metadata
+  component_repo = "bootcamp-infrastructure-live"
+  component_path = path_relative_to_include()
+
   # Tags for state resources (S3 bucket, DynamoDB table, etc)
   state_tags = {
-    iac-repo   = "bootcamp-sre-infrastructure-live"
+    iac-repo   = local.component_repo
     created-by = "terragrunt"
   }
 }
@@ -35,6 +39,13 @@ generate "aws_provider" {
 
       # Only these AWS account IDs may be operated on by this template
       allowed_account_ids = ["${local.account_id}"]
+
+      default_tags {
+        tags = {
+          component-repo = "${local.component_repo}"
+          component-path = "${local.component_path}"
+        }
+      }
     }
   EOF
 }
