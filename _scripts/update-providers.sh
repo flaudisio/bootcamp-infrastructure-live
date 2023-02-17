@@ -29,4 +29,4 @@ fi
 set -x
 
 terragrunt run-all init --terragrunt-working-dir "$TargetDir"
-terragrunt run-all providers lock -platform=linux_amd64 -platform=linux_arm64 --terragrunt-working-dir "$TargetDir"
+terragrunt run-all providers lock -platform=linux_amd64 --terragrunt-working-dir "$TargetDir"
