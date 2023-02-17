@@ -1,5 +1,5 @@
 terraform {
-  source = "git::ssh://git@github.com/flaudisio/bootcamp-infrastructure-modules.git//modules/services/wordpress-site?ref=v0.3.0"
+  source = "github.com/flaudisio/bootcamp-infrastructure-modules//modules/services/wordpress-site?ref=v0.3.0"
 }
 
 dependency "vpc" {
