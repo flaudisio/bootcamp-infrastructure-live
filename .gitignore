@@ -46,7 +46,7 @@ Thumbs.db
 !.vscode/README.md
 !.vscode/extensions.json
 !.vscode/recommended-*.json
-!.vscode/setup.sh
+!.vscode/settings.json
 
 # ------------------------------------------------------------------------------
 # TERRAFORM TOOLING
