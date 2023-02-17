@@ -7,6 +7,6 @@
 # "generate" block in the root terragrunt.hcl file for more information.
 # ------------------------------------------------------------------------------
 
-terraform 1.3.6
-terragrunt 0.42.5
-shellcheck 0.8.0
+terraform 1.3.9
+terragrunt 0.43.2
+shellcheck 0.9.0

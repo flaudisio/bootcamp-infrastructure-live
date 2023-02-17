@@ -4,7 +4,7 @@
 
 # Version constraints
 terraform_version_constraint  = "~> 1.3"
-terragrunt_version_constraint = "~> 0.42"
+terragrunt_version_constraint = "~> 0.43"
 
 # Local aliases for improved maintainability
 locals {
