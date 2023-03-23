@@ -5,5 +5,3 @@ include "root" {
 include "common" {
   path = "${get_repo_root()}/_common/account/account-baseline.hcl"
 }
-
-inputs = {}
