@@ -19,13 +19,20 @@ set -o pipefail
 
 readonly TargetDir="$1"
 
-: "${NO_UPGRADE:=""}"
+: "${NO_INIT_UPGRADE:=""}"
+: "${SKIP_INIT:=""}"
+: "${SKIP_PROVIDERS_LOCK:=""}"
 
-if [[ -z "$NO_UPGRADE" ]] ; then
+if [[ -z "$NO_INIT_UPGRADE" ]] ; then
     export TF_CLI_ARGS_init="-upgrade"
 fi
 
 set -x
 
-terragrunt run-all init --terragrunt-working-dir "$TargetDir"
-terragrunt run-all providers lock -platform=linux_amd64 --terragrunt-working-dir "$TargetDir"
+if [[ -z "$SKIP_INIT" ]] ; then
+    terragrunt run-all init --terragrunt-working-dir "$TargetDir"
+fi
+
+if [[ -z "$SKIP_PROVIDERS_LOCK" ]] ; then
+    terragrunt run-all providers lock -platform=linux_amd64 --terragrunt-working-dir "$TargetDir"
+fi
