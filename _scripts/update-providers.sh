@@ -8,9 +8,8 @@
 #   ./update-providers.sh TARGET_DIR
 #
 # Example:
-#   ./update-providers.sh digitalocean/development/
-#   ./update-providers.sh oracle/production/
-#   ./update-providers.sh oracle/production/sa-saopaulo-1/infrastructure/vcn/
+#   ./update-providers.sh development/_global/
+#   ./update-providers.sh development/us-east-1/networking/vpc/
 #
 ##
 
