@@ -1,0 +1,31 @@
+terraform {
+  source = "git::https://git@github.com/flaudisio/bootcamp-infrastructure-modules//modules/services/consul-cluster?ref=v0.6.3"
+}
+
+dependency "vpc" {
+  config_path = format("%s/networking/vpc", dirname(find_in_parent_folders("region.hcl")))
+
+  mock_outputs = {
+    vpc_id          = "vpc-aaa111"
+    vpc_cidr_block  = "99.0.0.0/16"
+    private_subnets = ["subnet-ddd444", "subnet-eee555", "subnet-fff666"]
+  }
+}
+
+dependency "security_groups" {
+  config_path = format("%s/networking/security-groups", dirname(find_in_parent_folders("region.hcl")))
+
+  mock_outputs = {
+    infra_services_security_group = "sg-aaa111"
+  }
+}
+
+inputs = {
+  vpc_id          = dependency.vpc.outputs.vpc_id
+  vpc_cidr_block  = dependency.vpc.outputs.vpc_cidr_block
+  private_subnets = dependency.vpc.outputs.private_subnets
+
+  attach_security_groups = [
+    dependency.security_groups.outputs.infra_services_security_group,
+  ]
+}
