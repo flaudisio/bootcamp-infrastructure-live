@@ -1,5 +1,5 @@
 terraform {
-  source = "git::https://git@github.com/flaudisio/bootcamp-infrastructure-modules//modules/services/consul-cluster?ref=v0.6.3"
+  source = "github.com/flaudisio/bootcamp-infrastructure-modules//modules/services/consul-cluster?ref=v0.6.3"
 }
 
 dependency "vpc" {
