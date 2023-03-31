@@ -25,6 +25,7 @@ locals {
   # Tags for state resources (S3 bucket, DynamoDB table, etc)
   state_tags = {
     iac-repo   = local.component_repo
+    iac-path   = "/"
     created-by = "terragrunt"
   }
 }
@@ -42,8 +43,8 @@ generate "aws_provider" {
 
       default_tags {
         tags = {
-          component-repo = "${local.component_repo}"
-          component-path = "${local.component_path}"
+          iac-repo = "${local.component_repo}"
+          iac-path = "${local.component_path}"
         }
       }
     }
