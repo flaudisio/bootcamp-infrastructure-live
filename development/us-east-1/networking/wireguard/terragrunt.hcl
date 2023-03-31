@@ -10,4 +10,8 @@ inputs = {
   instance_type = "t4g.micro"
 
   public_key = file("public-key.txt")
+
+  # Uncomment and change to your IP
+  # WARNING: use only for tests and troubleshooting!
+  # allow_ssh_from_cidrs = ["123.4.5.6/32"]
 }
