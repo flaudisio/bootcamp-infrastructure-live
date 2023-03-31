@@ -1,5 +1,5 @@
 terraform {
-  source = "github.com/flaudisio/bootcamp-infrastructure-modules//modules/networking/wireguard-server?ref=v0.6.2"
+  source = "github.com/flaudisio/bootcamp-infrastructure-modules//modules/networking/wireguard-server?ref=v0.6.3"
 }
 
 dependency "vpc" {
