@@ -8,7 +8,7 @@ include "common" {
 
 inputs = {
   owner   = "infra"
-  service = "semaphore-server"
+  service = "semaphore"
 
   bucket_name = "semaphore-backups"
 
