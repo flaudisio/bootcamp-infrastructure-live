@@ -77,11 +77,13 @@ The following repositories are required:
   - Deploy the VPN server:
 
     ```
-    cd <env>/us-east-1/networking/vpc/
+    cd <env>/us-east-1/networking/wireguard/
     terragrunt apply
     ```
 
-At this point you have a pretty functional AWS account! From now on you may explore other infrastructure components to
+### Step 6 - Explore!
+
+At this point you should have a minimally functional AWS account! From now on you may explore other infrastructure components to
 learn and deploy, for example:
 
 - `mgmt/prometheus-server/` - a [Prometheus](https://prometheus.io/) server instance.
